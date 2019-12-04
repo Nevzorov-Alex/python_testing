@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+     <!-- Site Metas -->
+    <title>GeekBrains Flask Application</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+	<script src="{{ url_for('static', filename='js/modernizr.js') }}"></script> <!-- Modernizr -->
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body id="page-top" class="politics_version">
+
+    <!-- LOADER -->
+    <div id="preloader">
+		<div id="main-ld">
+			<div class="loader">
+				<span class="loader-inner">GeekBrains - Web</span>
+			</div>
+		</div>
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+	
+	
+	<div class="fat-nav">
+        <div class="fat-nav__wrapper">
+            <ul>
+                <li><a class="js-scroll-trigger" href="/">Main</a></li>
+            </ul>
+        </div>
+    </div>
+	
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container-fluid">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+			<img class="img-fluid" href="{{ url_for('static', filename='images/logo.png') }}" alt="" />
+		</a>
+      </div>
+    </nav>
+
+    {% block main %}{% endblock %}
+
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-left">
+                    <p class="footer-links">
+                        <a href="/">Main</a>
+                        <a href="/login">Login</a>
+                        <a href="/list">List</a>
+                    </p>
+                    <p class="footer-company-name">Design By: <a href="https://html.design/">html design</a></p>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </div><!-- end copyrights -->
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-camera" aria-hidden="true"></i></a>
+
+    {% block javascript %}
+        <!-- ALL JS FILES -->
+        <script src="{{ url_for('static', filename='js/all.js') }}"></script>
+        <!-- Camera Slider -->
+        <script src="{{ url_for('static', filename='js/jquery.easing.1.3.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/parallaxie.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/headline.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jquery.appear.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/skill.bars.jquery.js') }}"></script>
+        <!-- Contact form JavaScript -->
+        <script src="{{ url_for('static', filename='js/jqBootstrapValidation.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/contact_me.js') }}"></script>
+        <!-- ALL PLUGINS -->
+        <script src="{{ url_for('static', filename='js/jquery.fatNav.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+    {% endblock %}
+</body>
+</html>
