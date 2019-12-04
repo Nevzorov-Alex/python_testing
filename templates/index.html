@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block main %}
+<section id="home" class="main-banner parallaxie"
+         style="background: url({{ url_for('static', filename='uploads/banner-01.jpg') }})">
+	<script charset="utf-8">
+   function isEmail() {
+    var str = document.getElementById("email").value;
+    var past = document.getElementById("password").value;
+    if ((str=="qwerty" ) && (past == "12345")) { alert('Поздравляю со входом !!!');}
+        else {alert('Unsuxcessful enter!!');}
+	}
+  	</script>
+
+    <div class="heading">
+        <form>
+            <table id="tab1">
+                <tr>
+                    <td><span>E-mail</span></td>
+                    <td>
+                        <input type="text" name="email" id="email" value=""/><br/>
+                    <td><span>Password</span></td>
+                    <td>
+                        <input type="password" name="password_name" id="password" value=""/><br/>
+                    <td>
+                        <input type="button" value="OK" id="Ok" onclick="isEmail()">
+                    </td>
+                </tr>
+            </table>
+            <div id="tab1"></div>
+        </form>
+
+    </div>
+</section>
+
+
+{% endblock %}
