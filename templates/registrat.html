@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block main %}
+	<div id="gallery" class="section lb">
+		<div class="container">
+			<div class="section-title text-center">
+				<h3>Registration</h3>
+                <div class="row">
+				    <label for="Login" style="color: black;">Enter your login</label>
+                    <input id="log" class="form-control" type="text" placeholder="Archimed" required>
+				    <label for="email" style="color: black;">Enter your mail</label>
+                    <input id="email" class="form-control" type="email" placeholder="example@mail.com" required>
+                    <label for="password" style="color: black;">Enter your Password</label>
+                    <input id="passw_beg" class="form-control" type="password" placeholder="********" required>
+                    <label for="password" style="color: black;">Repeat your Password</label>
+                    <input id="passw_fin" class="form-control" type="password" placeholder="********" required>
+                    <button id="regi" class="btn btn-primary">Registration!</button>
+                </div>
+			</div><!-- end title -->
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    {{super()}}
+    <script type="text/javascript">
+        $("#regi").click(function(){
+            const log = $.trim($("#log").val());
+            const email = $.trim($("#email").val());
+            const pwd_b=$.trim($("#passw_beg").val());
+            const pwd_f=$.trim($("#passw_fin").val());
+            if (log===""){
+                alert("email can not be empty");
+                return;
+            }
+
+            if (email===""){
+                alert("email can not be empty");
+                return;
+            }
+            if (pwd_b===""){
+                alert("password can not be empty");
+                return;
+            }
+            if (pwd_f===""){
+                alert("password can not be empty");
+                return;
+            }
+            const data ={
+                "login": log,
+                "email": email,
+                "passw_beg": pwd_b,
+                "passw_fin": pwd_f,
+            }
+
+            $.ajax({
+                method:"POST",
+                url:"/reg_auth",
+                dataType:"JSON",
+                contentType:"application/json; charset=utf-8",
+                data: JSON.stringify(data)
+            }).done(function(msg){
+                alert(msg.text);
+                });
+        });
+
+    </script>
+{% endblock %}
+
